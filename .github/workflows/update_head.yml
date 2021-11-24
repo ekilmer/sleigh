@@ -1,8 +1,8 @@
 name: Update Ghidra Sleigh
 
 on:
-  schedule:
-    - cron: '0 */1 * * *'
+  # schedule:
+  #   - cron: '0 */1 * * *'
 
   # Should only be manually run on default branch (master)
   workflow_dispatch:
