@@ -42,6 +42,7 @@ set(spec_file_list
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_Base.slaspec"
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_Android10.slaspec"
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_Android11.slaspec"
+  "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_Android12.slaspec"
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_KitKat.slaspec"
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_Lollipop.slaspec"
   "${ghidrasource_SOURCE_DIR}/Ghidra/Processors/Dalvik/data/languages/Dalvik_DEX_Marshmallow.slaspec"
