@@ -1,0 +1,36 @@
+name: Update Ghidra Sleigh
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+
+  # Should only be manually run on default branch (master)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v2
+      with:
+        # Use oldest supported version for maximum script compatibility
+        python-version: '3.7'
+
+    - name: Run Update Script
+      id: head_update
+      run: |
+        # Sets some outputs. See next step
+        python3.7 scripts/update_ghidra_head.py --ci
+
+    - name: Create PR
+      if: steps.head_update.outputs.did_update
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: Update Ghidra HEAD to commit ${{ steps.head_update.outputs.short_sha }}
+        commit-message: Bump Ghidra HEAD commit ${{ steps.head_update.outputs.short_sha }}
+        branch: cron/update-ghidra-${{ steps.head_update.outputs.short_sha }}
+        delete-branch: true
+        draft: true
